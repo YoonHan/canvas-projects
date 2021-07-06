@@ -10,3 +10,11 @@ export function getRandomInteger(start, end) {
     10
   );
 }
+
+/**
+ * canvas 요소의 크기를 window size에 맞게 조정한다.
+ */
+export function resizeCanvas(canvasElem) {
+  canvasElem.width = window.innerWidth;
+  canvasElem.height = window.innerHeight;
+}

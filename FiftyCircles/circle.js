@@ -24,13 +24,26 @@ export class Circle {
    * 벗어났다면 x, y 축에 대해 진행방향을 반대로 바꾼다.
    */
   update() {
-    if (this.x - this.radius < 0 || this.x + this.radius > window.innerWidth) {
+    if (this.x - this.radius < 0) {
       this.dx *= -1;
+      this.x = this.radius;
     }
 
-    if (this.y - this.radius < 0 || this.y + this.radius > window.innerHeight) {
-      this.dy *= -1;
+    if (this.x + this.radius > window.innerWidth) {
+      this.dx *= -1;
+      this.x = window.innerWidth - this.radius;
     }
+
+    if (this.y - this.radius < 0) {
+      this.dy *= -1;
+      this.y = this.radius;
+    }
+
+    if (this.y + this.radius > window.innerHeight) {
+      this.dy *= -1;
+      this.y = window.innerHeight - this.radius;
+    }
+
     this.x += this.dx;
     this.y += this.dy;
   }
