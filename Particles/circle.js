@@ -2,7 +2,7 @@ import { mousePos } from './canvas.js';
 
 
 export class Circle {
-  constructor(ctx, x, y, dx, dy, radius, color) {
+  constructor(ctx, x, y, dx, dy, radius, minRadius, color) {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
@@ -10,6 +10,9 @@ export class Circle {
     this.dy = dy;
     this.radius = radius;
     this.color = color;
+    this.maxRadius = 150;
+    this.minRadius = minRadius;
+    this.dRadius = 2;
   }
 
   /**
@@ -51,8 +54,15 @@ export class Circle {
     this.y += this.dy;
 
     // mousemove interactivity
-    if (Math.abs(mousePos.x - this.x) < 50) {
-      this.radius += 1;
+    if (
+      (
+        Math.abs(mousePos.x - this.x) < 50 &&
+        Math.abs(mousePos.y - this.y) < 50
+      ) && this.radius + this.dRadius <= this.maxRadius
+    ) {
+      this.radius += this.dRadius;
+    } else if (this.radius - this.dRadius >= this.minRadius) {
+      this.radius -= this.dRadius;
     }
   }
 

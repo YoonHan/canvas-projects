@@ -13,10 +13,11 @@ resizeCanvas(canvas);
 const c = canvas.getContext('2d');
 
 // Circle instance 들을 생성하여 배열에 저장.
-const CIRCLES_NUM = 100;
+const CIRCLES_NUM = 1000;
 const circles = [];
 for (let i = 0; i < CIRCLES_NUM; i++) {
-  const RADIUS = 30;
+  const RADIUS = getRandomInteger(10, 30);
+  const MIN_RADIUS = getRandomInteger(2, 10);
   const X = getRandomInteger(RADIUS, window.innerWidth - RADIUS);
   const dX = (Math.random() - 0.5) * 4;
   const Y = getRandomInteger(RADIUS, window.innerHeight - RADIUS);
@@ -28,7 +29,7 @@ for (let i = 0; i < CIRCLES_NUM; i++) {
     ${Math.random().toFixed(1)}
   )`;
 
-  circles.push(new Circle(c, X, Y, dX, dY, RADIUS, COLOR));
+  circles.push(new Circle(c, X, Y, dX, dY, RADIUS, MIN_RADIUS, COLOR));
 }
 
 // 메인 애니메이션 함수
@@ -48,12 +49,17 @@ window.addEventListener('resize', () => {
   resizeCanvas(canvas);
 })
 
-// mousemove event handler 추가
+// mouse releated event handler 추가
 window.addEventListener('mousemove', (event) => {
   mousePos.x = event.x;
   mousePos.y = event.y;
-  console.log(mousePos);
 })
+
+window.addEventListener('mouseout', () => {
+  mousePos.x = -9999;
+  mousePos.y = -9999;
+})
+
 
 // 애니메이션 시작
 animate();
