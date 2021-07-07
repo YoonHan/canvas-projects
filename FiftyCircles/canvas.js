@@ -1,4 +1,4 @@
-import { getRandomInteger, resizeCanvas } from './util.js';
+import { getRandomInteger, resizeCanvas } from '../util/index.js';
 import { Circle } from './circle.js';
 
 

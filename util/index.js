@@ -4,7 +4,7 @@
  * @param {number} end
  * @return start 이상 end 미만인 랜덤 정수
  */
-export function getRandomInteger(start, end) {
+ export function getRandomInteger(start, end) {
   return parseInt(
     (Math.random() * (end - start)) + start,
     10
