@@ -1,0 +1,23 @@
+{
+  "name": "canvas-projects",
+  "description": "HTML5 Canvas projects repository",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoonHan/canvas-projects.git"
+  },
+  "keywords": [
+    "HTML5",
+    "Canvas"
+  ],
+  "author": "Yoon Han",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YoonHan/canvas-projects/issues"
+  },
+  "homepage": "https://github.com/YoonHan/canvas-projects#readme"
+}

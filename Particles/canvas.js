@@ -36,7 +36,7 @@ for (let i = 0; i < CIRCLES_NUM; i++) {
 function animate() {
   window.requestAnimationFrame(animate);
   // Clear previous frame
-  c.clearRect(0, 0, window.innerWidth, window.innerHeight)
+  c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   // Draw circles
   circles.forEach((circle) => {
