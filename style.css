@@ -69,6 +69,11 @@ button.cadetblue {
   color: white;
 }
 
+button.chocolate {
+  background-color: chocolate;
+  color: white;
+}
+
 /* pre-defined colors */
 :root {
   --my-blue: #0070F0;
