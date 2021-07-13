@@ -1,4 +1,4 @@
-import { CircularParticle } from './CircularParticle';
+import { CircularParticle } from './CircularParticle.js';
 import { resizeCanvas, getRandomFloatNum, getRandomInteger } from '../util/index.js';
 
 
