@@ -49,7 +49,7 @@ function animate() {
   window.requestAnimationFrame(animate);
   // 이전 프레임 삭제
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  // 공 그리기
+  // 별 그리기
   balls.forEach((ball) => {
     ball.animate();
   })

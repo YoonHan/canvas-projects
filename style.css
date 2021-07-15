@@ -73,6 +73,11 @@ button.chocolate {
   color: white;
 }
 
+button.blueviolet {
+  background-color: blueviolet;
+  color: white;
+}
+
 /* pre-defined colors */
 :root {
   --my-blue: #0070F0;
